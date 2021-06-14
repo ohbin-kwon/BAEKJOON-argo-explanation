@@ -1,0 +1,23 @@
+**나의 풀이**
+<pre>
+<code>
+H, M = input().split()
+
+H = int(H)
+M = int(M)
+new_M = M - 45
+
+if new_M >= 0:
+    M = new_M
+    print(H, M)
+else:
+    M = 60 + new_M
+    if H == 0:
+        H = 23
+        print(H, M)
+
+    else:
+        H = H - 1
+        print(H, M)
+</code>
+</pre>
