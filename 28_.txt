@@ -1,0 +1,31 @@
+## 나의 풀이(틀림)
+<pre>
+<code>
+stack = []
+while True:
+    a = input()
+    if a == '.':
+        break
+    answer = True
+    for st in a:
+        if st == '(' or st =='[':
+            stack.append(st)
+        elif st == ')':
+            if not stack or stack.pop() != '(':
+                print('NO')
+                answer = False
+                break
+        elif st == ']' :
+            if not stack or stack.pop() != '[':
+                print('NO')
+                answer = False
+                break
+    if not stack and answer == True:
+        print('YES')
+    elif stack and answer == True:
+        print('NO')
+
+
+</code>
+</pre>
+
