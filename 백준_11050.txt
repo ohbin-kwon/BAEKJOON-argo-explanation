@@ -1,0 +1,27 @@
+## 나의 풀이(런타임 에러)
+<pre>
+<code>
+def factorial(n):
+    if n == 1:
+        return 1
+    return n* factorial(n - 1)
+
+n, k = map(int, input().split())
+
+print(factorial(n)//(factorial(k)*factorial(n-k)))
+</code>
+</pre>
+- 왜 런타임 에러가 날까?
+- 찾았다 n == 0 일때 return1을 하지않으면 factorial(k)가 factorial0이되면서 무한한 재귀함수가 된다   
+(1<n<10, 0<k<n 이므로)
+
+## 다른 풀이
+<pre>
+<code>
+from math import factorial
+
+n, k = map(int, input().split())
+
+print(factorial(n)//(factorial(k)*factorial(n-k)))
+</code>
+</pre>
