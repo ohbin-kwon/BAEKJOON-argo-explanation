@@ -1,0 +1,33 @@
+## 다른 풀이
+<pre>
+<code>
+import sys
+from collections import deque
+
+n, m = map(int, sys.stdin.readline().split())
+numbers = list(map(int, sys.stdin.readline().split()))
+queue = deque(range(1, n+1))
+
+total = 0
+
+for i in range(len(numbers)):
+    if numbers[i] == queue[0]:
+        queue.popleft()
+        continue
+    queue_idx = queue.index(numbers[i])
+
+    if queue_idx > len(queue)//2:
+        queue.rotate(len(queue) - queue_idx)
+        total += (len(queue) - queue_idx)
+
+    elif queue_idx <= len(queue)//2:
+        queue.rotate(- queue_idx)
+        total += queue_idx
+
+    queue.popleft()
+
+print(total)
+</code>
+</pre>
+- deque의 개념 습득
+- deque에 대해서 정리하기
