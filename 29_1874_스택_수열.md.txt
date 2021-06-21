@@ -1,0 +1,46 @@
+## 나의 풀이(시간 초과)
+<pre>
+<code>
+import sys
+
+n = int(sys.stdin.readline())
+stack = []
+plus_minus_data = []
+no_data = True
+num_stack = list(range(n, 0, -1))
+
+for _ in range(n):
+    target_num = int(sys.stdin.readline())
+
+    if target_num in stack:
+        a = stack.pop()
+        if a != target_num:
+            no_data = False
+            break
+        else:
+            plus_minus_data.append('-')
+            continue
+
+    while num_stack[-1] <= target_num:
+        stack.append(num_stack.pop())
+        plus_minus_data.append('+')
+        if stack[-1] == target_num:
+            stack.pop()
+            plus_minus_data.append('-')
+            break
+
+if not no_data:
+    print('NO')
+else:
+    for i in plus_minus_data:
+        print(i)
+</code>
+</pre>
+
+## 다른 풀이
+<pre>
+<code>
+
+</code>
+</pre>
+
