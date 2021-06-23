@@ -1,0 +1,22 @@
+## 다른 풀이
+<pre>
+<code>
+n, m = list(map(int, input().split()))
+s = []
+
+def dfs(start):
+    if len(s) == m:
+        print(' '.join(map(str, s)))
+        return
+
+    for i in range(start, n + 1):
+        if i not in s:
+            s.append(i)
+            dfs(i + 1)
+            s.pop()
+
+dfs(1)
+</code>
+</pre>
+- dfs, 백트래킹을 이용한 풀이
+- https://jiwon-coding.tistory.com/22?category=882771
