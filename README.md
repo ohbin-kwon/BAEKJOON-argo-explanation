@@ -1,2 +1,2 @@
 # BAEKJOON
-하나라도 제대로
+vlog로 옮기자
